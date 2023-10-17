@@ -10,8 +10,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: InkWell(
         onTap: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => NewsPage()));
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => NewsPage()));
         },
         child: SafeArea(
           child: Column(
