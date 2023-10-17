@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class NewsPage extends StatelessWidget {
+  NewsPage({super.key});
+
   final now = DateTime.now();
 
   @override
