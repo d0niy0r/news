@@ -29,26 +29,34 @@ class NewsPage extends StatelessWidget {
                 ],
               ),
             ),
-            Text(
-              "CNN",
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              "Biden offers message for KIm Jong Un as he prepares to wrap first leg of his Asia trip-Cnn",
-              style: const TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.normal,
-              ),
-            ),
-            Text(
-              DateFormat("MMM d, y").format(DateTime.now()),
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w300,
-                color: Colors.black.withOpacity(0.4),
+            Container(
+              margin: EdgeInsets.all(12),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    "CNN",
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    "Biden offers message for KIm Jong Un as he prepares to wrap first leg of his Asia trip-Cnn",
+                    style: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                  Text(
+                    DateFormat("MMM d, y").format(DateTime.now()),
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w300,
+                      color: Colors.black.withOpacity(0.4),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
