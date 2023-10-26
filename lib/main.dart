@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:new_1/widgets/home_page.dart';
-import 'package:intl/intl.dart';
-import 'package:new_1/widgets/news_page.dart';
+
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -17,7 +15,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomePage(),
+      },
     );
   }
 }

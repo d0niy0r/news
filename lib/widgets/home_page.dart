@@ -1,26 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:new_1/models/Repository.dart';
+import 'package:new_1/widgets/news_page.dart';
 
 class HomePage extends StatelessWidget {
   final now = DateTime.now();
   final list1 = Repository.list;
 
-  // static List<Repository> list = [
-  //   Repository("CNN", "assets/image/1.jpg",
-  //       "Biden offers message for KIm Jong Un as he prepares to wrap first leg of his Asia trip-Cnn"),
-  //   Repository("Reuters", "assets/image/2.jpg",
-  //       "Palestine supporters march in London against Israel action in Gaza - Reuters"),
-  //   Repository("CNN", "assets/image/3.jpg",
-  //       "Trump tells judge he will appeal gag order in federal election interference case - NBC News"),
-  //   Repository("CNN", "assets/image/4.jpg",
-  //       "Drug retailer Rite Aid files for bankruptcy amid rising debt, opioid litigation - Reuters"),
-  //   Repository("CNN", "assets/image/1.jpg", ""),
-  // ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white70,
       body: SafeArea(
         child: Column(
           children: [
@@ -35,7 +25,7 @@ class HomePage extends StatelessWidget {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                    Text(
+                    const Text(
                       "Breaking News",
                       style: TextStyle(
                         fontSize: 32,
@@ -46,27 +36,38 @@ class HomePage extends StatelessWidget {
                 ),
                 const SizedBox(width: 100),
                 IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.settings,
                     color: Colors.black,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    _showToast(context);
+                  },
                 )
               ],
             ),
             Expanded(
               child: ListView.separated(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   top: 14,
                   left: 14,
                   right: 14,
                 ),
                 itemCount: list1.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return News(list1[index]);
+                  return InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => NewsPage(list1[index]),
+                          ),
+                        );
+                      },
+                      child: News(list1[index]));
                 },
                 separatorBuilder: (BuildContext context, int index) {
-                  return SizedBox(
+                  return const SizedBox(
                     height: 10,
                   );
                 },
@@ -137,4 +138,17 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+}
+
+void _showToast(BuildContext context) {
+  final scaffold = ScaffoldMessenger.of(context);
+  scaffold.showSnackBar(
+    SnackBar(
+      content: const Text("This is Setting's bar"),
+      action: SnackBarAction(
+        label: 'OK',
+        onPressed: scaffold.hideCurrentSnackBar,
+      ),
+    ),
+  );
 }

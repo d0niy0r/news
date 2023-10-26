@@ -12,8 +12,8 @@ class Repository {
         "Palestine supporters march in London against Israel action in Gaza - Reuters"),
     Repository("CNN", "assets/image/3.jpg",
         "Trump tells judge he will appeal gag order in federal election interference case - NBC News"),
-    Repository("CNN", "assets/image/4.jpg",
+    Repository("CBS News", "assets/image/4.jpg",
         "Drug retailer Rite Aid files for bankruptcy amid rising debt, opioid litigation - Reuters"),
-    Repository("CNN", "assets/image/1.jpg", ""),
+    Repository("DC", "assets/image/joker.jpg", "This is Joker"),
   ];
 }
